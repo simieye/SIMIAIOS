@@ -1,0 +1,8 @@
+{
+  "name": "Simiai OS - 深圳市斯密爱科技有限公司",
+  "description": "全球首款主权AI跨境电商操作系统。赋能每一位创业者成为最强大的自己。You Are the Hero, We Are the Tool. 深度融合太极GEO生成式引擎，助力品牌主宰全球市场。",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
