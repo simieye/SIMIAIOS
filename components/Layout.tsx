@@ -2,7 +2,8 @@
 import React from 'react';
 import { AppView, Language } from '../types';
 import { ICON_MAP, UI_STRINGS } from '../constants';
-import { Menu, X, User, Bell, LogOut, ChevronRight, LayoutDashboard, Database, Activity, DollarSign, Settings, Globe, Shield, Lightbulb, Users, FlaskConical, Handshake, Box } from 'lucide-react';
+// Added Link to the lucide-react imports to resolve the missing reference on line 95
+import { Menu, X, User, Bell, LogOut, ChevronRight, LayoutDashboard, Database, Activity, DollarSign, Settings, Globe, Shield, Lightbulb, Users, FlaskConical, Handshake, Box, FileSearch, MessageCircle, MailSearch, ImageIcon, ShieldCheck, Sparkles, BookOpen, BrainCircuit, Binary, Link } from 'lucide-react';
 
 interface NavbarProps {
   setView: (v: AppView) => void;
@@ -27,29 +28,33 @@ export const Navbar: React.FC<NavbarProps> = ({ setView, language, toggleLanguag
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <button onClick={() => setView(AppView.PUBLIC)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">{t.website}</button>
-            <button onClick={() => setView(AppView.BROWSE_TOOLS)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors font-black text-accent">{t.browseTools}</button>
-            <button onClick={() => setView(AppView.PARTNERS)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">{t.strategicPartners}</button>
-            <button onClick={() => setView(AppView.RECRUITMENT)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">{language === 'zh' ? '英雄帖' : 'Careers'}</button>
-            <button onClick={() => setView(isLoggedIn ? AppView.DASHBOARD : AppView.AUTH)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">{t.userHub}</button>
-            {/* FIX: Removed the invalid 'toggleLanguage' boolean attribute from the button element */}
-            <button onClick={toggleLanguage} className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white/5 transition-colors text-primary border border-primary/20">
-              <Globe size={14} />
-              <span>{language === 'en' ? 'CN' : 'EN'}</span>
-            </button>
+            <button onClick={() => setView(AppView.OS_ASSISTANT)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-bold transition-colors text-accent flex items-center space-x-1"><MessageCircle size={14} /> <span>{t.osAssistant}</span></button>
+            <button onClick={() => setView(AppView.TAIJI_GEO)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-black text-white flex items-center space-x-1"><Binary size={14} className="text-primary" /> <span>{t.taijiGeo}</span></button>
+            <button onClick={() => setView(AppView.BEXT_IMAGE_CENTER)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-black text-accent flex items-center space-x-1"><ImageIcon size={14} /> <span>{t.bextCenter}</span></button>
             
-            {isLoggedIn ? (
-              <button onClick={() => setView(AppView.RD_STUDIO)} className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">{t.geoStudio}</button>
-            ) : (
-              <div className="flex items-center space-x-2">
-                <button onClick={() => setView(AppView.AUTH)} className="text-sm font-bold px-4 py-2 hover:text-primary transition-colors">{t.signIn}</button>
-                <button onClick={() => setView(AppView.AUTH)} className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-primary/20">{t.signUp}</button>
+            <button 
+              onClick={() => setView(AppView.AUTH)} 
+              className="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full text-sm font-black transition-all blue-glow active:scale-95 flex items-center space-x-2 shadow-lg shadow-primary/20"
+            >
+              <FileSearch size={16} />
+              <span>{t.freeReport}</span>
+            </button>
+
+            <button onClick={() => setView(isLoggedIn ? AppView.DASHBOARD : AppView.AUTH)} className="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">{t.userHub}</button>
+            
+            <button 
+              onClick={toggleLanguage} 
+              className="flex items-center space-x-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-widest transition-all hover:bg-primary/10 text-primary border border-primary/20 group"
+              aria-label="Toggle Language"
+            >
+              <Globe size={14} className="group-hover:rotate-12 transition-transform" />
+              <div className="flex items-center divide-x divide-primary/20">
+                <span className={`pr-1.5 ${language === 'zh' ? 'text-primary' : 'text-gray-500'}`}>简</span>
+                <span className={`pl-1.5 ${language === 'en' ? 'text-primary' : 'text-gray-500'}`}>EN</span>
               </div>
-            )}
+            </button>
           </div>
           <div className="md:hidden flex items-center space-x-4">
-            <button onClick={toggleLanguage} className="text-primary p-2">
-              <Globe size={20} />
-            </button>
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-400 hover:text-white">
               {isOpen ? <X /> : <Menu />}
             </button>
@@ -58,17 +63,17 @@ export const Navbar: React.FC<NavbarProps> = ({ setView, language, toggleLanguag
       </div>
       {isOpen && (
         <div className="md:hidden glass border-t border-white/10 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-4 pt-4 pb-6 space-y-3">
             <button onClick={() => { setView(AppView.PUBLIC); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10">{t.website}</button>
-            <button onClick={() => { setView(AppView.BROWSE_TOOLS); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-accent">{t.browseTools}</button>
-            <button onClick={() => { setView(AppView.PARTNERS); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10">{t.strategicPartners}</button>
-            <button onClick={() => { setView(AppView.RECRUITMENT); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10">{language === 'zh' ? '英雄帖' : 'Careers'}</button>
+            <button onClick={() => { setView(AppView.TAIJI_GEO); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-primary">{t.taijiGeo}</button>
             <button onClick={() => { setView(isLoggedIn ? AppView.DASHBOARD : AppView.AUTH); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10">{t.userHub}</button>
-            {isLoggedIn ? (
-              <button onClick={() => { setView(AppView.RD_STUDIO); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-primary">{t.geoStudio}</button>
-            ) : (
-              <button onClick={() => { setView(AppView.AUTH); setIsOpen(false); }} className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-primary">{t.signIn}</button>
-            )}
+            <button 
+              onClick={() => { toggleLanguage(); setIsOpen(false); }} 
+              className="flex items-center space-x-2 px-4 py-2 rounded-xl text-primary border border-primary/20 bg-primary/5 font-black text-xs uppercase"
+            >
+              <Globe size={16} />
+              <span>{language === 'en' ? '切换至中文' : 'Switch to EN'}</span>
+            </button>
           </div>
         </div>
       )}
@@ -80,29 +85,32 @@ export const Sidebar: React.FC<{ setView: (v: AppView) => void, onLogout: () => 
   const t = UI_STRINGS[language];
   const menuItems = [
     { view: AppView.DASHBOARD, icon: <LayoutDashboard />, label: t.dashboard },
-    { view: AppView.BROWSE_TOOLS, icon: <Box />, label: t.browseTools },
+    { view: AppView.KNOWLEDGE_BASE, icon: <BookOpen />, label: t.knowledgeBase },
+    { view: AppView.NEURAL_TRAINING, icon: <BrainCircuit />, label: t.neuralTraining },
+    { view: AppView.TAIJI_GEO, icon: <Binary />, label: t.taijiGeo },
+    { view: AppView.DATA_SOVEREIGNTY, icon: <ShieldCheck />, label: t.sovereigntyCenter },
+    { view: AppView.OS_ASSISTANT, icon: <MessageCircle />, label: t.osAssistant },
+    { view: AppView.MODEL_MARKET, icon: <Sparkles />, label: t.modelMarket },
+    { view: AppView.BEXT_IMAGE_CENTER, icon: <ImageIcon />, label: t.bextCenter },
+    { view: AppView.SNOV_CENTER, icon: <MailSearch />, label: t.snovCenter },
+    { view: AppView.MCP_MARKET, icon: <Link />, label: t.mcpMarket },
     { view: AppView.RD_STUDIO, icon: <FlaskConical />, label: language === 'zh' ? '研发生态' : 'R&D Ecosystem' },
-    { view: AppView.PARTNERS, icon: <Handshake />, label: t.strategicPartners },
-    { view: AppView.GEO_INSIGHTS, icon: <Lightbulb />, label: t.insights },
-    { view: AppView.API_STUDIO, icon: <Activity />, label: t.apiStudio },
-    { view: AppView.RECRUITMENT, icon: <Users />, label: language === 'zh' ? '英雄帖' : 'Recruitment' },
-    { icon: <DollarSign />, label: t.finance },
     { icon: <Settings />, label: t.settings },
   ];
 
   return (
     <div className="w-64 glass h-screen fixed left-0 top-16 hidden lg:flex flex-col p-4 border-r border-white/10">
-      <div className="space-y-2 flex-grow">
+      <div className="space-y-1 flex-grow overflow-y-auto custom-scrollbar">
         {menuItems.map((item, idx) => (
           <button
             key={idx}
             onClick={() => item.view && setView(item.view)}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-all ${
+            className={`w-full flex items-center space-x-3 px-4 py-2.5 rounded-xl transition-all ${
               active === item.view ? 'bg-primary/20 text-primary border border-primary/20' : 'hover:bg-white/5 text-gray-400 hover:text-white'
             }`}
           >
             {item.icon}
-            <span className="font-medium text-sm">{item.label}</span>
+            <span className="font-bold text-xs uppercase tracking-wider">{item.label}</span>
           </button>
         ))}
       </div>

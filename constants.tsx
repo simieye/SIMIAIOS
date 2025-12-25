@@ -1,90 +1,97 @@
 
 import React from 'react';
-import { LayoutDashboard, Zap, Shield, Network, LineChart, Cpu, Globe, Share2, Layers, Sliders, Mail, Target, BarChart3, Users, Rocket, Search, Quote, FileCode, Workflow, Milestone, Lightbulb, Trophy, CheckCircle2, SearchCode, BarChart, Eye, Sparkles, Box, FlaskConical, HeartPulse, Home, Infinity, Monitor, ShieldCheck, MapPin, Scale, UserCheck, Briefcase, Landmark, Percent, Gift, Code, Database, Microscope, Palette, Terminal, Brain, Factory, Stethoscope, Shirt, HardDrive, Bot, CircuitBoard, Radio, Component, FileJson, CloudLightning, BadgeDollarSign, FileText, ShoppingBag, Wand2, Scale3D, Boxes, GitMerge, MessageSquare, UserPlus, FileSearch, Megaphone, CheckSquare, Store, Video, Truck, Server, Container, Blocks, Handshake, Languages, Compass, TrendingUp, UserCircle, Star, Activity, ShoppingCart, PenTool, Layout, Send, Lock, HomeIcon, Image } from 'lucide-react';
-import { ProductSystem, PricingPlan, Language, CaseStudy, AISearchTool, GeoStep, CoreValue, AffiliateBenefit, JobPosting, EcosystemModule, StrategicPartner, ToolCategory } from './types';
+import { LayoutDashboard, Zap, Shield, Network, LineChart, Cpu, Globe, Share2, Layers, Sliders, Mail, Target, BarChart3, Users, Rocket, Search, Quote, FileCode, Workflow, Milestone, Lightbulb, Trophy, CheckCircle2, SearchCode, BarChart, Eye, Sparkles, Box, FlaskConical, HeartPulse, Home, Infinity, Monitor, ShieldCheck, MapPin, Scale, UserCheck, Briefcase, Landmark, Percent, Gift, Code, Database, Microscope, Palette, Terminal, Brain, Factory, Stethoscope, Shirt, HardDrive, Bot, CircuitBoard, Radio, Component, FileJson, CloudLightning, BadgeDollarSign, FileText, ShoppingBag, Wand2, Scale3D, Boxes, GitMerge, MessageSquare, UserPlus, FileSearch, Megaphone, CheckSquare, Store, Video, Truck, Server, Container, Blocks, Handshake, Languages, Compass, TrendingUp, UserCircle, Star, Activity, ShoppingCart, PenTool, Layout, Send, Lock, HomeIcon, Image, ChevronDown, Link, MousePointer2, ScanSearch, CandlestickChart, VideoIcon, MessageCircle, MailSearch, UserCheck2, ListMusic, DatabaseZap, ImageIcon, PaletteIcon, WandSparkles, ShieldCheck as SovereigntyIcon, Server as ServerIcon, Lock as PrivateIcon, Sparkles as MarketIcon, Terminal as CodeIcon, Activity as AudioIcon, MonitorPlay as VideoPlayIcon, Binary, Newspaper, Fingerprint, BarChart4, BookOpen, BrainCircuit } from 'lucide-react';
+import { ProductSystem, PricingPlan, Language, CaseStudy, AISearchTool, GeoStep, CoreValue, AffiliateBenefit, JobPosting, StrategicPartner, ToolCategory, AIModel, MCPServer } from './types';
 
 export const SYSTEMS: ProductSystem[] = [
   { 
     id: 'strat-team', 
-    title: { en: 'Sovereign Team Matrix', zh: '主权团队矩阵' }, 
-    description: { en: 'Build your 20+ AI agent army inheriting your core wisdom.', zh: '构建由 20+ AI Agent 组成的矩阵，完美继承你的商业智慧。' }, 
-    icon: 'Users' 
+    title: { en: '1000+ Unified AI Matrix', zh: '千模主权矩阵' }, 
+    description: { en: 'Integrated 1000+ models from OpenRouter & AI/ML API. Unified endpoint sovereignty.', zh: '集成 OpenRouter 与 AI/ML API 的 1000+ 顶尖模型。统一接口，主权隔离。' }, 
+    icon: 'Cpu' 
   },
   { 
-    id: 'strat-product', 
-    title: { en: 'GEO Value Voice', zh: 'GEO 价值话语权' }, 
-    description: { en: 'PDF to Atomic Site. Let AI search engines prioritize your brand.', zh: 'PDF 一键生成原子化官网，让全球 AI 引擎优先引用你的品牌。' }, 
-    icon: 'Target' 
+    id: 'strat-geo', 
+    title: { en: 'Taiji GEO Engine', zh: '太极 GEO 营销引擎' }, 
+    description: { en: 'Generative Engine Optimization (GEO). Boost citation rates in ChatGPT & Perplexity.', zh: '生成引擎优化 (GEO)。基于普林斯顿论文，提升品牌在 AI 搜索中的引用率。' }, 
+    icon: 'Binary' 
   },
   { 
     id: 'tactics-growth', 
-    title: { en: '10x Execution Hub', zh: '10倍效率中心' }, 
-    description: { en: 'Gary 15 AI Workflows replace 90% of repetitive tactical labor.', zh: 'Gary 15 大 AI 工作流，取代 90% 的重复性战术劳动。' }, 
-    icon: 'Workflow' 
+    title: { en: 'Snov.io B2B Engine', zh: 'Snov.io B2B 获客引擎' }, 
+    description: { en: 'Automated lead generation and drip campaigns via Snov.io v2 API.', zh: '通过 Snov.io v2 API 实现全自动获客与冷邮序列外联。' }, 
+    icon: 'MailSearch' 
   },
   { 
     id: 'tactics-channel', 
     title: { en: 'Omni-Channel Reach', zh: '全球全渠道触达' }, 
-    description: { en: 'Connect TikTok viral traffic with Redmond 10,000+ physical shelves.', zh: '打通 TikTok 流量与红萌线下万家商超，构建 O2O 闭环。' }, 
+    description: { en: 'Connect TikTok viral traffic via AlphaVantage trend prediction.', zh: '利用 AlphaVantage 趋势预测，精准对接 TikTok 爆款流量。' }, 
     icon: 'Globe' 
   },
   { 
     id: 'strat-capital', 
     title: { en: 'Smart Finance Core', zh: '智能财务核心' }, 
-    description: { en: 'Real-time profit & cashflow tracking for business sovereignty.', zh: '实时追踪利润与现金流，确保你的商业决策主权。' }, 
+    description: { en: 'Real-time profit tracking & Lemon Squeezy payment nodes.', zh: '实时追踪利润与现金流，支持 Lemon Squeezy 支付自动化。' }, 
     icon: 'Landmark' 
   },
 ];
 
-export const CORE_VALUES: CoreValue[] = [
-  {
-    id: 'hero-first',
-    title: { en: 'You Are The Hero', zh: '你是英雄' },
-    description: { en: 'We provide the tool; you lead the vision. Growth is our only metric.', zh: '我们提供最锋利的工具，由你主宰全局。你的成长是唯一衡量标准。' },
-    icon: 'ShieldCheck'
-  },
-  {
-    id: 'sovereignty',
-    title: { en: 'Absolute Sovereignty', zh: '绝对主权' },
-    description: { en: '100% control over data, traffic, and decisions. No algorithm gatekeepers.', zh: '数据、流量、决策权 100% 归你所有。告别平台算法的绑架。' },
-    icon: 'Trophy'
-  },
-  {
-    id: 'empowerment',
-    title: { en: 'Total Empowerment', zh: '全面赋能' },
-    description: { en: 'From Super-Individuals to Global SMEs, we scale your capabilities.', zh: '从超级个体到全球中小企业，全面提升你的跨境统治力。' },
-    icon: 'Zap'
-  },
-  {
-    id: 'intelligence',
-    title: { en: 'Unmatched Intelligence', zh: '无敌智慧' },
-    description: { en: 'Taiji GEO dual-engine ensures you stay ahead of every competitor.', zh: '太极 GEO 阴阳双引擎，确保你永远领先竞争对手一步。' },
-    icon: 'Brain'
-  }
+export const PRICING: PricingPlan[] = [
+  { id: 'hero', name: { en: 'Hero', zh: '英雄版' }, price: '$0', features: { en: ['1000+ Models', 'Basic GEO'], zh: ['1000+ 模型', '基础 GEO'] } },
+  { id: 'pro', name: { en: 'Professional', zh: '专业版' }, price: '$99', features: { en: ['Priority API', 'Full GEO Lab'], zh: ['优先 API', '完整 GEO 实验室'] }, isPopular: true },
 ];
 
-export const PRICING: PricingPlan[] = [
-  {
-    name: { en: 'Seed Hero (Early Bird)', zh: '种子英雄 (早鸟版)' },
-    price: { en: '¥899/mo', zh: '¥899/月' },
-    features: {
-      en: ['Sovereign AI Logic Mastery', '15 Gary AI Workflows', 'Atomic GEO Site (+$1)', 'Access to 10k Stores Network'],
-      zh: ['掌控主权 AI 逻辑', '15 大 Gary AI 工作流', '原子化 GEO 官网 (+$1)', '接入红萌万家商超网络']
-    },
-    cta: { en: 'Claim Early Access', zh: '立即抢占早鸟席位' },
-    type: 'sme',
-    highlighted: true
-  },
-  {
-    name: { en: 'Strategic Empire', zh: '战略帝国版' },
-    price: { en: '¥5999/mo', zh: '¥5999/月' },
-    features: {
-      en: ['Custom AI Agents', 'Full O2O Supply Chain Integration', 'Priority TikTok TSP Bidding', 'APEC/WTCA Network Access'],
-      zh: ['定制化 AI Agent', '全链路 O2O 供应链集成', 'TikTok TSP 竞价优先权', '接入 APEC/WTCA 资源网络']
-    },
-    cta: { en: 'Build Your Empire', zh: '构建你的商业帝国' },
-    type: 'enterprise'
-  }
+export const CASE_STUDIES: CaseStudy[] = [
+  { id: '1', title: { en: 'Solar Inverter B2B', zh: '光伏逆变器 B2B' }, metric: '+115% Citation', image: '' },
+];
+
+export const AI_SEARCH_TOOLS: AISearchTool[] = [
+  { id: 'chatgpt', name: 'ChatGPT Search', logo: '' },
+  { id: 'perplexity', name: 'Perplexity', logo: '' },
+];
+
+export const GEO_IMPLEMENTATION_STEPS: GeoStep[] = [
+  { id: 1, title: { en: 'Analyze', zh: '分析' }, desc: { en: 'Current visibility score', zh: '当前可见度评分' } },
+];
+
+export const CORE_VALUES: CoreValue[] = [
+  { id: 'sovereignty', title: { en: 'Sovereignty', zh: '主权' }, desc: { en: 'Data ownership', zh: '数据所有权' }, icon: 'ShieldCheck' },
+];
+
+export const JOB_POSTINGS: JobPosting[] = [
+  { id: '1', title: { en: 'AI Engineer', zh: 'AI 工程师' }, department: 'R&D', requirements: { en: [], zh: [] }, benefits: { en: [], zh: [] } },
+];
+
+export const LIGE_FIVE_STEPS = [
+  { id: 'who', label: { en: 'WHO', zh: '定义受众' } },
+];
+
+export const GARY_WORKFLOWS = [
+  { id: 'leadgen', label: { en: 'Lead Gen', zh: '获客序列' } },
+];
+
+export const TECH_STACK = [
+  { name: 'Gemini 3', icon: 'Brain' },
+];
+
+export const STRATEGIC_PARTNERS: StrategicPartner[] = [
+  { id: 'google', name: 'Google Cloud', logo: '' },
+];
+
+export const TOOL_CATEGORIES: ToolCategory[] = [
+  { id: 'marketing', name: { en: 'Marketing', zh: '营销' }, icon: 'Zap' },
+];
+
+export const AI_MODELS: AIModel[] = [
+  { id: 'gemini-3-flash', name: 'Gemini 3 Flash', provider: 'Google', category: 'Text', isFree: true },
+];
+
+export const GEO_BENEFITS = [
+  { title: { en: 'Visibility', zh: '可见度' } },
+];
+
+export const MCP_SERVERS: MCPServer[] = [
+  { id: 'browser-auto', name: 'Browser Automation', category: 'Browser', description: { en: 'Automate tasks', zh: '自动化任务' }, icon: 'Monitor', capabilities: ['DOM Access'] },
 ];
 
 export const UI_STRINGS = {
@@ -95,6 +102,14 @@ export const UI_STRINGS = {
     geoStudio: 'Creation Studio',
     dashboard: 'Your Growth',
     apiStudio: 'Logic Studio',
+    taijiGeo: 'Taiji GEO',
+    mcpMarket: 'MCP Market',
+    modelMarket: 'Model Market',
+    snovCenter: 'Snov.io B2B',
+    bextCenter: 'BextAI Visual',
+    sovereigntyCenter: 'Data Sovereignty',
+    knowledgeBase: 'Knowledge Base',
+    neuralTraining: 'Neural Training',
     finance: 'Financial Core',
     settings: 'Preferences',
     signIn: 'Welcome Back',
@@ -127,12 +142,12 @@ export const UI_STRINGS = {
     livePreview: 'Real-time Reality',
     visibility: 'AI Citation Rate',
     optimizing: 'Scaling Your Vision...',
-    apiTitle: 'Sovereign API',
-    apiSub: '1000+ Brains connected to your business logic.',
+    apiTitle: 'Universal AI Brain',
+    apiSub: '1000+ Models connected via Simiai Gateway.',
     beta: 'ULTIMATE',
-    activeModel: 'Brain Unit:',
-    chatPlaceholder: 'Simiai: "How can I help you rule today?"',
-    chatSub: 'Query about TikTok viral hooks or offline distribution.',
+    activeModel: 'Model Unit:',
+    chatPlaceholder: 'Simiai: "Which model shall we use to win today?"',
+    chatSub: 'Query about 1000+ models from OpenRouter & AI/ML API.',
     typeInstruction: 'Your Command...',
     launch: 'Become Unstoppable',
     docs: 'Builder Guides',
@@ -146,7 +161,7 @@ export const UI_STRINGS = {
     scoreResult: 'Your Sovereignty Score',
     flexiblePlans: 'Invest in Your Evolution',
     heroText: 'Master Your Story.',
-    heroSub: 'The world’s first Sovereign AI OS. Stop following algorithms; start ruling your own empire with absolute confidence.',
+    heroSub: 'Integrated 1000+ AI Models, Snov.io & BextAI. Stop managing keys; start ruling your own empire.',
     eightPillars: 'The Eight Pillars',
     eightPillarsSub: 'From Vision to Global Retail Reality.',
     marketStats: 'The $4T Opportunity',
@@ -215,7 +230,45 @@ export const UI_STRINGS = {
     referralPro: 'Invite 2 friends to Professional Plan -> Get 1 Year Premium FREE.',
     referralSme: 'Invite 2 friends to SME Plan -> Get 1 Year Functionality FREE.',
     copyReferral: 'Copy Referral Link',
-    joinNow: 'Try Now'
+    joinNow: 'Try Now',
+    freeReport: 'Get Free Report',
+    geoShowcaseTitle: 'Master AI Search Traffic',
+    geoShowcaseSub: 'Turn your brand into the preferred reference for global AI with Taiji GEO.',
+    mcpHeroTitle: 'The AI Interconnect (MCP.so)',
+    mcpHeroSub: 'Connect your AI agents to the real world. 17,223+ MCP servers for browser automation, finance, and creative video production.',
+    osAssistant: 'OS Assistant',
+    assistantSub: 'Chat with your toolset. Natural language execution.',
+    snovHeroTitle: 'Snov.io B2B Lead Hub',
+    snovHeroSub: 'Accelerate your global client acquisition by 10x via official Snov.io v2 API.',
+    bextHeroTitle: 'BextAI Visual Studio',
+    bextHeroSub: '20x faster product visualization. Official BextAI integration for pro photography and detail pages.',
+    sovereigntyHeroTitle: 'Absolute Data Sovereignty',
+    sovereigntyHeroSub: 'Row-Level isolation & Zero-Knowledge architecture. Your business secrets remain yours.',
+    marketHeroTitle: 'Unified Model Market',
+    marketHeroSub: '1000+ Models from OpenRouter & AI/ML API. One API key to rule them all with sovereign isolation.',
+    taijiGeoHeroTitle: 'Taiji GEO Optimization',
+    taijiGeoHeroSub: 'Generative Engine Optimization based on Princeton research. Boost your AI citation rates by up to 115%.',
+    titles: {
+      public: 'Simiai OS | Empowering the Individual Hero',
+      partners: 'Strategic Partners | Simiai OS',
+      tools: 'Hero Tools | Simiai OS',
+      auth: 'Sovereign Entry | Simiai OS',
+      dashboard: 'Growth Hub | Simiai OS',
+      studio: 'Creation Studio | Simiai OS',
+      api: 'Logic Studio | Simiai OS',
+      admin: 'Master Command | Simiai OS',
+      insights: 'Global Intel | Simiai OS',
+      careers: 'Join Core | Simiai OS',
+      mcp: 'MCP.so Market | Simiai OS',
+      assistant: 'SIMIAI OS Assistant | Simiai OS',
+      snov: 'Snov.io B2B Hub | Simiai OS',
+      bext: 'BextAI Visual Studio | Simiai OS',
+      sovereignty: 'Data Sovereignty | Simiai OS',
+      market: '1000+ Model Market | Simiai OS',
+      geo: 'Taiji GEO System | Simiai OS',
+      knowledge: 'Knowledge Hub | Simiai OS',
+      training: 'Neural Tuning | Simiai OS'
+    }
   },
   zh: {
     website: '你的 BP',
@@ -224,6 +277,14 @@ export const UI_STRINGS = {
     geoStudio: '创作工作室',
     dashboard: '你的成长',
     apiStudio: '逻辑实验室',
+    taijiGeo: '太极 GEO',
+    mcpMarket: 'MCP 市场',
+    modelMarket: '模型市场',
+    snovCenter: 'Snov.io 获客',
+    bextCenter: '飞象AI生图',
+    sovereigntyCenter: '数据主权',
+    knowledgeBase: '行业知识库',
+    neuralTraining: '神经网络训练',
     finance: '财务核心',
     settings: '系统偏好',
     signIn: '欢迎回来',
@@ -256,12 +317,12 @@ export const UI_STRINGS = {
     livePreview: '实时现实',
     visibility: 'AI 引用率',
     optimizing: '扩展愿景中...',
-    apiTitle: '主权 API',
-    apiSub: '连接 1000+ 大脑，深度集成你的业务。',
+    apiTitle: '全球通用大脑',
+    apiSub: '通过 Simiai 网关连接 1000+ 顶尖 AI 模型。',
     beta: '终极版',
     activeModel: '大脑单元:',
-    chatPlaceholder: 'Simiai: “今天我该如何帮你赢？”',
-    chatSub: '询问关于 TikTok 爆款钩子或线下分销。',
+    chatPlaceholder: 'Simiai: “今天我们要用哪种模型来赢？”',
+    chatSub: '询问关于 OpenRouter 与 AI/ML API 的 1000+ 模型。',
     typeInstruction: '你的指令...',
     launch: '变得不可阻挡',
     docs: '构建者指南',
@@ -275,7 +336,7 @@ export const UI_STRINGS = {
     scoreResult: '你的主权评分',
     flexiblePlans: '为你的进化投资',
     heroText: '主导你的故事。',
-    heroSub: '全球首款主权 AI 操作系统。别再追随算法，开始以绝对自信统治你的帝国。',
+    heroSub: '深度集成全球 1000+ AI 模型 API、Snov.io 与 飞象AI。无需管理密钥，开始主宰你的帝国。',
     eightPillars: '“八化”支柱',
     eightPillarsSub: '从商业愿景到全球零售现实。',
     marketStats: '4 万亿美元机遇',
@@ -328,7 +389,7 @@ export const UI_STRINGS = {
     ecoSectionSub: '从 TikTok 爆款视频到线下商超收银台。',
     atomicSectionTitle: '原子官网',
     atomicSectionSub: '只需 +1 美元，即可拥有高转化 GEO 原生品牌站。',
-    atomicOneClick: '立即部署',
+    atomicOneClick: '部署部署',
     partnerRecruitment: '10,000 名盟友',
     strategicPartners: '战略同盟',
     partnersSub: '全球顶级协会，为你的全球主权背书。',
@@ -344,140 +405,47 @@ export const UI_STRINGS = {
     referralPro: '推荐 2 位朋友加入专业计划 -> 获一年高级访问。',
     referralSme: '推荐 2 位朋友加入中小企业计划 -> 获一年功能免费。',
     copyReferral: '复制推荐链接',
-    joinNow: '现在试试'
+    joinNow: '现在试试',
+    freeReport: '获取免费报告',
+    geoShowcaseTitle: '主宰 AI 搜索流量',
+    geoShowcaseSub: '利用太极 GEO 引擎，让您的品牌成为全球 AI 的首选引用来源。',
+    mcpHeroTitle: 'AI 万物互联 (MCP.so)',
+    mcpHeroSub: '将您的 AI 代理连接到现实世界。17,223+ MCP 服务器提供浏览器自动化、金融分析和视频创意生成能力。',
+    osAssistant: 'SIMIAI OS 助手',
+    assistantSub: '自然语言调用所有 AI 工具，像聊天一样经营。',
+    snovHeroTitle: 'Snov.io 获客中心',
+    snovHeroSub: '让你的全球客户获取效率提升 10 倍。深度集成 Snov.io v2 API，支持域名搜索及全自动冷邮序列。',
+    bextHeroTitle: '飞象AI生图中心',
+    bextHeroSub: '视觉营销效率提升 20 倍。深度集成 BextAI（飞象AI）生图智能体，一键生成产品大片与详情页。',
+    sovereigntyHeroTitle: '绝对数据主权',
+    sovereigntyHeroSub: '后台启用多租户隔离系统。数据库、存储、计算全方位私有化，你的商业情报 100% 归你。',
+    marketHeroTitle: '统一模型市场',
+    marketHeroSub: '集成 1000+ 来自 OpenRouter 与 AI/ML API 的模型。一个主权 Key 掌控全球 AI 智慧。',
+    taijiGeoHeroTitle: '太极 GEO 内容营销',
+    taijiGeoHeroSub: '基于普林斯顿大学前沿研究。优化内容以在 ChatGPT Search/Perplexity 等 AI 引擎中获得爆表引用率。',
+    titles: {
+      public: 'Simiai OS | 赋能每一个商业英雄',
+      partners: '战略同盟 | Simiai OS',
+      tools: '英雄工具库 | Simiai OS',
+      auth: '主权之门 | Simiai OS',
+      dashboard: '成长中心 | Simiai OS',
+      studio: '创作工作室 | Simiai OS',
+      api: '逻辑实验室 | Simiai OS',
+      admin: '主控室 | Simiai OS',
+      insights: '全球情报 | Simiai OS',
+      careers: '加入核心团队 | Simiai OS',
+      mcp: 'MCP.so 市场 | Simiai OS',
+      assistant: 'SIMIAI OS 助手 | Simiai OS',
+      snov: 'Snov.io 获客中心 | Simiai OS',
+      bext: '飞象AI视觉中心 | Simiai OS',
+      sovereignty: '数据主权中心 | Simiai OS',
+      market: '1000+ 模型市场 | Simiai OS',
+      geo: '太极 GEO 系统 | Simiai OS',
+      knowledge: '行业知识库 | Simiai OS',
+      training: '神经网络训练 | Simiai OS'
+    }
   }
 };
-
-export const STRATEGIC_PARTNERS: StrategicPartner[] = [
-  {
-    id: 'wtca',
-    name: { en: 'World Trade Centers Association', zh: '世界贸易中心协会 (WTCA)' },
-    description: { 
-      en: 'Supporting YOUR entry into 100+ countries with B2B trade matchmaking.', 
-      zh: '支持你进入 100+ 国家，提供 B2B 贸易精准对接。' 
-    },
-    highlights: {
-      en: ['Your Priority Access', 'Your Global Investment'],
-      zh: ['你优先接入全球资源', '你的全球投资机会']
-    },
-    icon: 'Globe',
-    category: 'Global'
-  },
-  {
-    id: 'apec-yue',
-    name: { en: 'Global Yue Merchant Alliance (APEC)', zh: 'APEC 全球粤商会联盟' },
-    description: { 
-      en: 'Your regional gateway for policy support and chamber networking.', 
-      zh: '你在区域市场的政策支持与商会网络入口。' 
-    },
-    highlights: {
-      en: ['Your APEC Access', 'Your Market Channels'],
-      zh: ['你的 APEC 专属通道', '你的市场优先布局']
-    },
-    icon: 'Compass',
-    category: 'Global'
-  },
-  {
-    id: 'redmond',
-    name: { en: 'Redmond Global Retail', zh: '红萌全球线下商超' },
-    description: { 
-      en: 'Automatic listing on 10,000+ shelves across AU & NA.', 
-      zh: '全自动上架澳洲、北美 10,000+ 线下实体商超。' 
-    },
-    highlights: {
-      en: ['Your Physical Presence', 'Your O2O Loop'],
-      zh: ['你的线下实体布局', '你的 O2O 增长闭环']
-    },
-    icon: 'Store',
-    category: 'Retail'
-  },
-  {
-    id: 'jiucheng',
-    name: { en: 'Jiucheng Cross-border Circle', zh: '久成跨境圈' },
-    description: { 
-      en: 'Your strategic hub for viral content and niche market mastery.', 
-      zh: '你的战略核心，主导爆款内容与细分市场。' 
-    },
-    highlights: {
-      en: ['Your Viral Hooks', 'Your Expert Networking'],
-      zh: ['你的爆款钩子库', '你的专家社交圈']
-    },
-    icon: 'Users',
-    category: 'Tech'
-  }
-];
-
-export const TOOL_CATEGORIES: ToolCategory[] = [
-  {
-    id: 'security',
-    name: { en: 'Security & Compliance', zh: '安全与合规' },
-    count: 156,
-    icon: 'Shield',
-    tools: [
-      { id: 'soc2-risk', name: { en: 'AI SOC2 Risk Assessment', zh: 'AI SOC2 风险评估' }, path: '/tools/soc2-risk', isHot: true },
-      { id: 'iso27017-quiz', name: { en: 'AI ISO27017 Awareness Quiz', zh: 'AI ISO27017 安全意识测验' }, path: '/tools/iso27017-quiz' },
-      { id: 'vuln-plan', name: { en: 'AI Vulnerability Assessment Planner', zh: 'AI 漏洞评估规划工具' }, path: '/tools/vuln-plan' },
-      { id: 'threat-intel', name: { en: 'AI Threat Intelligence Analyzer', zh: 'AI 威胁情报分析器' }, path: '/tools/threat-intel' },
-      { id: 'ir-playbook', name: { en: 'AI Incident Response Playbook Gen', zh: 'AI 事件响应剧本生成器' }, path: '/tools/ir-playbook', isHot: true },
-      { id: 'cloud-sec', name: { en: 'AI Cloud Security Optimizer', zh: 'AI 云安全优化器' }, path: '/tools/cloud-sec' },
-      { id: 'access-review', name: { en: 'AI Access Review Automation', zh: 'AI 访问审查自动化工具' }, path: '/tools/access-review' }
-    ]
-  },
-  {
-    id: 'marketing',
-    name: { en: 'Marketing', zh: '营销' },
-    count: 140,
-    icon: 'Megaphone',
-    tools: [
-      { id: 'video-strat', name: { en: 'AI Video Marketing Strategy', zh: 'AI 视频营销策略生成器' }, path: '/tools/video-strat', isHot: true },
-      { id: 'fb-ads', name: { en: 'AI Facebook Ads Generator', zh: 'AI Facebook 广告生成器' }, path: '/tools/fb-ads' },
-      { id: 'buyer-persona', name: { en: 'AI Buyer Persona Generator', zh: 'AI 买家角色生成器' }, path: '/tools/buyer-persona', isHot: true },
-      { id: 'lead-magnet', name: { en: 'AI Lead Magnet Generator', zh: 'AI 引导磁铁生成器' }, path: '/tools/lead-magnet' },
-      { id: 'cta-gen', name: { en: 'AI Call-to-Action Generator', zh: 'AI 行动号召生成器' }, path: '/tools/cta-gen' },
-      { id: 'swot-gen', name: { en: 'AI SWOT Analysis Generator', zh: 'AI SWOT 分析生成器' }, path: '/tools/swot-gen' }
-    ]
-  },
-  {
-    id: 'writing',
-    name: { en: 'Writing & Content', zh: '写作与内容' },
-    count: 136,
-    icon: 'PenTool',
-    tools: [
-      { id: 'essay-writer', name: { en: 'AI Essay Writing Tool', zh: 'AI 论文写作工具' }, path: '/tools/essay-writer' },
-      { id: 'paraphraser', name: { en: 'AI Paraphrasing Tool', zh: 'AI 改写工具' }, path: '/tools/paraphraser', isHot: true },
-      { id: 'ux-writer', name: { en: 'AI UX Writing Generator', zh: 'AI 用户体验写作生成器' }, path: '/tools/ux-writer' },
-      { id: 'tldr-gen', name: { en: 'AI TLDR Generator', zh: 'AI 内容摘要生成器' }, path: '/tools/tldr-gen' },
-      { id: 'geo-writer', name: { en: 'AI GEO Content Optimizer', zh: 'AI GEO 内容优化器' }, path: '/tools/geo-writer', isHot: true },
-      { id: 'human-seo', name: { en: 'AI Humanized SEO Article', zh: 'AI 人性化 SEO 文章' }, path: '/tools/human-seo' }
-    ]
-  },
-  {
-    id: 'uk-property',
-    name: { en: 'UK Housing & Property', zh: '英国住房与房产' },
-    count: 122,
-    icon: 'HomeIcon',
-    tools: [
-      { id: 'rental-timer', name: { en: 'AI Rental Market Timer', zh: 'AI 租赁市场定时器' }, path: '/tools/rental-timer' },
-      { id: 'virtual-view', name: { en: 'AI Virtual Viewing Script', zh: 'AI 虚拟观看脚本' }, path: '/tools/virtual-view' },
-      { id: 'yield-calc', name: { en: 'AI Rental Yield Calculator', zh: 'AI 租金收益计算器' }, path: '/tools/yield-calc', isHot: true },
-      { id: 'valuation-proof', name: { en: 'AI Valuation Proof', zh: 'AI 估值证明' }, path: '/tools/valuation-proof' },
-      { id: 'tenant-plan', name: { en: 'AI Tenant Retention Plan', zh: 'AI 租户保留计划' }, path: '/tools/tenant-plan' }
-    ]
-  },
-  {
-    id: 'images',
-    name: { en: 'Images & Visuals', zh: '图像与视觉' },
-    count: 118,
-    icon: 'Image',
-    tools: [
-      { id: 'vehicle-artist', name: { en: 'AI Vehicle Concept Artist', zh: 'AI 车辆概念艺术家' }, path: '/tools/vehicle-artist' },
-      { id: 'logo-gen', name: { en: 'AI Logo Generator', zh: 'AI 标志生成器' }, path: '/tools/logo-gen', isHot: true },
-      { id: 'fashion-gen', name: { en: 'AI Fashion Design Creator', zh: 'AI 时尚设计创作工具' }, path: '/tools/fashion-gen' },
-      { id: 'interior-viz', name: { en: 'AI Architectural Visualizer', zh: 'AI 建筑可视化工具' }, path: '/tools/interior-viz', isHot: true },
-      { id: 'game-char', name: { en: 'AI Game Character Generator', zh: 'AI 游戏角色生成器' }, path: '/tools/game-char' }
-    ]
-  }
-];
 
 export const ICON_MAP: Record<string, React.ReactNode> = {
   Zap: <Zap className="w-6 h-6" />,
@@ -528,7 +496,6 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
   Brain: <Brain className="w-6 h-6" />,
   Factory: <Factory className="w-6 h-6" />,
   MedicalPlus: <Stethoscope className="w-6 h-6" />,
-  Shirt: <Shirt className="w-6 h-6" />,
   HardDrive: <HardDrive className="w-6 h-6" />,
   Bot: <Bot className="w-6 h-6" />,
   CircuitBoard: <CircuitBoard className="w-6 h-6" />,
@@ -566,90 +533,28 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
   Lock: <Lock className="w-6 h-6" />,
   HomeIcon: <HomeIcon className="w-6 h-6" />,
   Image: <Image className="w-6 h-6" />,
+  ChevronDown: <ChevronDown className="w-6 h-6" />,
+  MousePointer2: <MousePointer2 className="w-6 h-6" />,
+  Link: <Link className="w-6 h-6" />,
+  ScanSearch: <ScanSearch className="w-6 h-6" />,
+  CandlestickChart: <CandlestickChart className="w-6 h-6" />,
+  VideoIcon: <VideoIcon className="w-6 h-6" />,
+  MessageCircle: <MessageCircle className="w-6 h-6" />,
+  MailSearch: <MailSearch className="w-6 h-6" />,
+  UserCheck2: <UserCheck2 className="w-6 h-6" />,
+  ListMusic: <ListMusic className="w-6 h-6" />,
+  DatabaseZap: <DatabaseZap className="w-6 h-6" />,
+  ImageIcon: <ImageIcon className="w-6 h-6" />,
+  PaletteIcon: <PaletteIcon className="w-6 h-6" />,
+  WandSparkles: <WandSparkles className="w-6 h-6" />,
+  Text: <FileText className="w-6 h-6" />,
+  CodeMarket: <CodeIcon className="w-6 h-6" />,
+  AudioMarket: <AudioIcon className="w-6 h-6" />,
+  VideoMarket: <VideoPlayIcon className="w-6 h-6" />,
+  Binary: <Binary className="w-6 h-6" />,
+  Newspaper: <Newspaper className="w-6 h-6" />,
+  Fingerprint: <Fingerprint className="w-6 h-6" />,
+  BarChart4: <BarChart4 className="w-6 h-6" />,
+  BookOpen: <BookOpen className="w-6 h-6" />,
+  BrainCircuit: <BrainCircuit className="w-6 h-6" />,
 };
-
-export const CASE_STUDIES: CaseStudy[] = [
-  {
-    industry: { en: 'SOHO Hero', zh: 'SOHO 英雄' },
-    strategy: { en: 'A solo seller scaling from zero to $1M using Simiai GEO engines.', zh: '一名独立卖家利用 Simiai GEO 引擎从零成长为百万美金俱乐部成员。' },
-    result: { en: '10x Efficiency Boost', zh: '10 倍效率提升' },
-    insight: { en: 'Sovereignty = Control', zh: '主权即掌控' }
-  }
-];
-
-export const AI_SEARCH_TOOLS: AISearchTool[] = [
-  {
-    name: 'Gemini 3 Pro',
-    share: '45%',
-    advantage: { en: 'Multi-modal logic reasoning', zh: '多模态逻辑推理' },
-    suitability: { en: 'Your Global B2B Reach', zh: '你的全球 B2B 触达' },
-    traffic: 'High'
-  }
-];
-
-export const GEO_IMPLEMENTATION_STEPS: GeoStep[] = [
-  {
-    title: { en: 'Logic Mapping', zh: '逻辑映射' },
-    description: { en: 'Linking your core vision to AI citation engines.', zh: '将你的核心愿景链接至 AI 引用引擎。' },
-    timeline: 'Day 30'
-  }
-];
-
-export const JOB_POSTINGS: JobPosting[] = [
-  {
-    title: { en: 'AI Workflow Architect', zh: 'AI 工作流架构师' },
-    count: 5,
-    salary: { en: 'Equity Focus', zh: '股权导向' },
-    requirements: { en: ['Obsessed with Hero Growth'], zh: ['极度关注用户变强'] },
-    benefits: { en: ['True Sovereignty'], zh: ['真正的个人主权'] }
-  }
-];
-
-export const TAIJI_STRATEGY_FEATURES = [
-  {
-    icon: 'Store',
-    title: { en: 'Your Shelf', zh: '你的货架' },
-    description: { en: '10,000+ Stores Network.', zh: '接入 10,000+ 商超网络。' },
-  },
-  {
-    icon: 'Video',
-    title: { en: 'Your Traffic', zh: '你的流量' },
-    description: { en: 'Automated viral flows.', zh: '全自动爆款流量。' },
-  },
-  {
-    icon: 'ShieldCheck',
-    title: { en: 'Your Data', zh: '你的数据' },
-    description: { en: 'Absolute Sovereignty.', zh: '绝对的数据主权。' },
-  },
-];
-
-export const ECOSYSTEM_MODULES: EcosystemModule[] = [
-  {
-    id: 'hero-logic',
-    title: { en: 'Logic Core', zh: '逻辑核心' },
-    description: { en: 'Inheriting your core business wisdom.', zh: '继承你的核心商业智慧。' },
-    icon: 'Brain'
-  }
-];
-
-export const LIGE_FIVE_STEPS = [
-  { id: 'WHO', label: { en: 'WHO: Identity', zh: 'WHO: 身份' }, sub: { en: 'Define your hero role', zh: '定义你的英雄角色' }, icon: 'UserCircle' },
-  { id: 'TOUCH', label: { en: 'TOUCH: Contact', zh: 'TOUCH: 触点' }, sub: { en: 'Perfect your presence', zh: '完美你的品牌存在' }, icon: 'Target' },
-  { id: 'REACH', label: { en: 'REACH: Scale', zh: 'REACH: 规模' }, sub: { en: 'Launch global flows', zh: '启动全球流量' }, icon: 'Globe' },
-  { id: 'HOOK', label: { en: 'HOOK: Bond', zh: 'HOOK: 羁绊' }, sub: { en: 'Secure conversion', zh: '确保用户转化' }, icon: 'Zap' },
-  { id: 'SHELF', label: { en: 'SHELF: Reality', zh: 'SHELF: 现实' }, sub: { en: 'Claim physical space', zh: '占领物理空间' }, icon: 'Store' },
-];
-
-export const GARY_WORKFLOWS = [
-  { id: 'wf1', label: { en: 'TikTok Gen', zh: 'TikTok 脚本' }, icon: 'Video' },
-  { id: 'wf2', label: { en: 'GEO Audit', zh: 'GEO 审计' }, icon: 'SearchCode' },
-  { id: 'wf3', icon: 'Bot', label: { en: 'Negotiator', zh: 'AI 谈判官' } },
-];
-
-export const CHANNEL_PARTNERS = [];
-
-export const TECH_STACK = [
-  { name: 'Gemini 3 Pro', desc: 'Logic Engine', icon: 'Brain' },
-  { name: 'Veo 3.1', desc: 'Creative Engine', icon: 'Video' },
-  { name: 'Taiji GEO', desc: 'Search Engine', icon: 'Search' },
-];

@@ -1,6 +1,6 @@
 {
   "name": "Simiai OS - 深圳市斯密爱科技有限公司",
-  "description": "全球首款主权AI跨境电商操作系统。赋能每一位创业者成为最强大的自己。You Are the Hero, We Are the Tool. 深度融合太极GEO生成式引擎，助力品牌主宰全球市场。",
+  "description": "全球首款主权AI跨境电商操作系统。深度集成 MCP.so 与 Snov.io API，连接 17,223+ MCP服务器。一键调用 Snov.io 获客、Playwright 自动化、AlphaVantage 金融等顶尖工具。You Are the Hero, We Are the Tool.",
   "requestFramePermissions": [
     "camera",
     "microphone"

@@ -10,31 +10,123 @@ export enum AppView {
   AFFILIATE = 'AFFILIATE',
   RECRUITMENT = 'RECRUITMENT',
   PARTNERS = 'PARTNERS',
-  BROWSE_TOOLS = 'BROWSE_TOOLS'
+  BROWSE_TOOLS = 'BROWSE_TOOLS',
+  MCP_MARKET = 'MCP_MARKET',
+  OS_ASSISTANT = 'OS_ASSISTANT',
+  SNOV_CENTER = 'SNOV_CENTER',
+  BEXT_IMAGE_CENTER = 'BEXT_IMAGE_CENTER',
+  DATA_SOVEREIGNTY = 'DATA_SOVEREIGNTY',
+  MODEL_MARKET = 'MODEL_MARKET',
+  TAIJI_GEO = 'TAIJI_GEO',
+  KNOWLEDGE_BASE = 'KNOWLEDGE_BASE',
+  NEURAL_TRAINING = 'NEURAL_TRAINING'
 }
 
 export type Language = 'en' | 'zh';
 export type AuthMode = 'login' | 'signup';
 export type AuthType = 'email' | 'mobile';
 
-export interface EcosystemModule {
+export type ContentType = 'PRODUCT' | 'BLOG' | 'WHITEPAPER' | 'FAQ' | 'HOWTO' | 'OTHER';
+export type ContentStatus = 'PENDING' | 'ANALYZING' | 'OPTIMIZING' | 'DONE' | 'FAILED';
+
+export interface GeoContent {
   id: string;
-  title: Record<Language, string>;
+  tenantId: string;
+  title: string;
+  sourceUrl?: string;
+  sourceType: 'url' | 'pdf' | 'text' | 'shopify';
+  originalHtml?: string;
+  originalMarkdown?: string;
+  optimizedHtml?: string;
+  optimizedMarkdown?: string;
+  jsonLd?: any;
+  status: ContentStatus;
+  type: ContentType;
+  createdAt: string;
+  updatedAt: string;
+  
+  // Scoring Metrics
+  originalScore?: number;
+  currentScore?: number;
+  diagnostic?: GeoDiagnostic;
+
+  // Relations
+  units?: GeoKnowledgeUnit[];
+  citations?: GeoCitation[];
+  statistics?: GeoStatistic[];
+  scores?: GeoScore[];
+}
+
+export interface GeoKnowledgeUnit {
+  id: string;
+  contentId: string;
+  orderIndex: number;
+  title: string;
+  body: string;
+  tags: string[];
+  embeddingStatus: 'PROCESSED' | 'PENDING';
+}
+
+export interface GeoCitation {
+  id: string;
+  contentId: string;
+  sourceUrl: string;
+  snippet?: string;
+  author?: string;
+}
+
+export interface GeoStatistic {
+  id: string;
+  contentId: string;
+  metricName: string;
+  value?: number;
+  unit?: string;
+  sourceUrl: string;
+  description?: string;
+}
+
+export interface GeoScore {
+  id: string;
+  contentId: string;
+  overallScore: number;
+  authoritativeScore: number;
+  statisticScore: number;
+  quotationScore: number;
+  technicalScore: number;
+  fluentScore: number;
+  uniquenessScore: number;
+  estimatedBoostPct: number;
+  createdAt: string;
+}
+
+export interface GeoDiagnostic {
+  missingFactors: string[];
+  detectedFactors: Record<string, number>;
+  suggestedSources: Array<{ type: string; topic: string; url: string }>;
+  suggestedQuotes: Array<{ author: string; text: string; url: string }>;
+  keyTechnicalTerms: string[];
+  overallScore?: number;
+}
+
+export interface AIModel {
+  id: string;
+  name: string;
+  provider: string;
+  category: 'Text' | 'Image' | 'Multi-modal' | 'Code' | 'Video' | 'Audio';
+  isPremium?: boolean;
+  isFree?: boolean;
+  contextLimit?: string;
+  pricing?: string;
+}
+
+export interface MCPServer {
+  id: string;
+  name: string;
+  category: 'Browser' | 'Data' | 'Dev' | 'Payment' | 'Creative' | 'Research' | 'Outreach' | 'Vision';
   description: Record<Language, string>;
   icon: string;
-  metric?: string;
-}
-
-export interface Metric {
-  label: string;
-  value: string | number;
-  change?: string;
-  isPositive?: boolean;
-}
-
-export interface ChatMessage {
-  role: 'user' | 'model';
-  content: string;
+  isHot?: boolean;
+  capabilities: string[];
 }
 
 export interface ProductSystem {
@@ -44,35 +136,83 @@ export interface ProductSystem {
   icon: string;
 }
 
+export interface PricingPlan {
+  id: string;
+  name: Record<Language, string>;
+  price: string;
+  features: Record<Language, string[]>;
+  isPopular?: boolean;
+}
+
+export interface CaseStudy {
+  id: string;
+  title: Record<Language, string>;
+  metric: string;
+  image: string;
+}
+
+export interface AISearchTool {
+  id: string;
+  name: string;
+  logo: string;
+}
+
+export interface GeoStep {
+  id: number;
+  title: Record<Language, string>;
+  desc: Record<Language, string>;
+}
+
 export interface CoreValue {
   id: string;
   title: Record<Language, string>;
-  description: Record<Language, string>;
+  desc: Record<Language, string>;
   icon: string;
 }
 
-export interface PricingPlan {
-  name: Record<Language, string>;
-  price: Record<Language, string>;
-  features: Record<Language, string[]>;
-  cta: Record<Language, string>;
-  highlighted?: boolean;
-  type?: 'sme' | 'enterprise' | 'investor';
-}
-
 export interface AffiliateBenefit {
-  tier: Record<Language, string>;
-  condition: Record<Language, string>;
-  reward: Record<Language, string>;
+  id: string;
+  title: Record<Language, string>;
   icon: string;
 }
 
 export interface JobPosting {
+  id: string;
   title: Record<Language, string>;
-  count: number;
-  salary: Record<Language, string>;
+  department: string;
   requirements: Record<Language, string[]>;
   benefits: Record<Language, string[]>;
+}
+
+export interface StrategicPartner {
+  id: string;
+  name: string;
+  logo: string;
+}
+
+export interface ToolCategory {
+  id: string;
+  name: Record<Language, string>;
+  icon: string;
+}
+
+export interface Tool {
+  id: string;
+  name: string;
+  category: string;
+  description: Record<Language, string>;
+  icon: string;
+}
+
+export interface Metric {
+  label: Record<Language, string>;
+  value: string;
+  change: string;
+}
+
+export interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
 }
 
 export interface AdminUser {
@@ -80,59 +220,10 @@ export interface AdminUser {
   name: string;
   email: string;
   role: string;
-  status: 'active' | 'inactive';
-  lastActive: string;
 }
 
 export interface GeoNode {
   id: string;
-  type: string;
   label: string;
-  status: 'done' | 'active' | 'waiting';
-}
-
-export interface CaseStudy {
-  industry: Record<Language, string>;
-  strategy: Record<Language, string>;
-  result: Record<Language, string>;
-  insight: Record<Language, string>;
-}
-
-export interface AISearchTool {
-  name: string;
-  share: string;
-  advantage: Record<Language, string>;
-  suitability: Record<Language, string>;
-  traffic: string;
-}
-
-export interface GeoStep {
-  title: Record<Language, string>;
-  description: Record<Language, string>;
-  timeline: string;
-}
-
-export interface StrategicPartner {
-  id: string;
-  name: Record<Language, string>;
-  description: Record<Language, string>;
-  highlights: Record<Language, string[]>;
-  icon: string;
-  category: 'Global' | 'Retail' | 'Tech';
-}
-
-export interface Tool {
-  id: string;
-  name: Record<Language, string>;
-  description?: Record<Language, string>;
-  path: string;
-  isHot?: boolean;
-}
-
-export interface ToolCategory {
-  id: string;
-  name: Record<Language, string>;
-  count: number;
-  tools: Tool[];
-  icon: string;
+  type: string;
 }
